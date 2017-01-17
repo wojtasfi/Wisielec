@@ -1,5 +1,5 @@
 from random import randint
-slowa =['kwiatek', 'tartak', 'drzewo','mapa','pies', 'kot', 'sweter','myszka', 'lizak']
+slowa =['flower', 'wood', 'town','map','dog', 'cat', 'sweater','mouse', 'lolipop']
 rand_number = randint(0,len(slowa)-1)
 slowo = slowa[rand_number]
 proby = 5
@@ -15,9 +15,9 @@ elif dl_slowa >=2 and dl_slowa < 5:
 elif dl_slowa >=5:
     odmiana ="znaków"
     
-print("Witamy w grze Wisielec.")
-print("Słowo zostało wylosowane. Posiada ono %d %s.\n"
-"%s\nMożesz pomylić się %d razy." % (dl_slowa,odmiana,"_ " * len(slowo),proby))
+print("Wisielec.")
+print("The word has been chosen. It has %d %s.\n"
+"%s\nAllowed mistakes: %d." % (dl_slowa,odmiana,"_ " * len(slowo),proby))
 
 
 while proby >0 and odgadniete_litery < len(slowo):
@@ -27,10 +27,10 @@ while proby >0 and odgadniete_litery < len(slowo):
     
     
     while pytaj == "tak":
-        litera = input("Zgadnij literkę (prób %s):" % str(proby))
+        litera = input("Guess the letter (%s):" % str(proby))
         
         if litera in litery:
-            print("Już zgadłeś/aś tą literę.")
+            print("You have alresy guessed thie letter")
             continue
         
         if litera.isalpha():
@@ -45,9 +45,9 @@ while proby >0 and odgadniete_litery < len(slowo):
             zgadles =1
     
     if zgadles ==1:
-        print("Odgadłeś kolejną literę. Łącznie: %d." % odgadniete_litery)
+        print("You guessed this letter. Summary: %d." % odgadniete_litery)
     else:
-        print("Nie odgadłeś literki.")
+        print("Sorry you did not guess the letter.")
     
     #drukowanie odgadniętych liter
     print()
@@ -66,6 +66,6 @@ while proby >0 and odgadniete_litery < len(slowo):
         proby -= 1
     
 if proby == 0:
-    print("Przegrałeś :( Wyslosowane słowo to '%s'." % slowo)
+    print("You lost :( The word is: '%s'." % slowo)
 else:
-    print("Wygrałeś!!!")
+    print("You won!!!")
